@@ -1,0 +1,19 @@
+header {
+	height: 6rem;
+	position: relative;
+	background-color: #add;
+	h1 {
+		font-size: 1rem;
+		width: 5rem;
+		height: 5rem;
+		position: absolute;
+		left: 1rem;
+		top: 50%;
+		margin-top: -2.5rem;
+		border: 3px solid #333;
+		vertical-align: bottom;
+		a {
+			display: block;
+		}
+	}
+}
