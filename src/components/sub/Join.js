@@ -1,5 +1,10 @@
+import Layout from '../common/Layout';
 function Join() {
-	return <div>Join</div>;
+	return (
+		<>
+			<Layout name='join'></Layout>
+		</>
+	);
 }
 
 export default Join;

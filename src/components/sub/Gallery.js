@@ -1,5 +1,10 @@
+import Layout from '../common/Layout';
 function Gallery() {
-	return <div>Gallery</div>;
+	return (
+		<>
+			<Layout name='gallery'></Layout>
+		</>
+	);
 }
 
 export default Gallery;

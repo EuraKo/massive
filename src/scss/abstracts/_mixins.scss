@@ -37,12 +37,14 @@
 }
 
 @mixin inner($pdX: 3rem) {
-	width: 1180px;
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 $pdX;
-	@media screen and (min-width: 1200px) {
-		padding: 0;
+	.inner {
+		width: 1180px;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0 $pdX;
+		@media screen and (min-width: 1200px) {
+			padding: 0;
+		}
 	}
 }
 

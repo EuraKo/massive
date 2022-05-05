@@ -1,0 +1,16 @@
+.content {
+	h2 {
+		font: 4rem/1 $fontPoint;
+		text-transform: uppercase;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(-1rem);
+		transition: 500ms;
+	}
+	&.on {
+		h2 {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

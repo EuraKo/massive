@@ -20,17 +20,12 @@ $colorYellow: #dfb15b;
 $fontColor: #dfb15b;
 $fontColor-brown: #8e4a15;
 $fontColor-green: #545123;
-// member color
-// $ceoColor: rgba($colorRed, 0.6);
-// $rndColor: rgba($colorViolt, 0.6);
-// $designColor: rgba($colorBlue, 0.6);
 $ceoColor: rgba($colorBk, 0.8);
 $rndColor: rgba($fontColor-brown, 0.8);
 $designColor: rgba($fontColor-green, 0.8);
 // 폰트 ======================
-$fontDefault: 'Montserrat', sans-serif;
-$fontPoint: 'Cardo', sans-serif;
-$fontPoint-2: 'Audrey', sans-serif;
+$fontDefault: 'Noto Sans JP', sans-serif;
+$fontPoint: 'Poppins', sans-serif;
 // 폰트사이즈
-$fontTitle: 24px;
-$fzBasic: 16px;
+$fontTitle: 2.4rem;
+$fzBasic: 1.6rem;
