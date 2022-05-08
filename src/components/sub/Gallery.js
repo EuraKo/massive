@@ -20,7 +20,7 @@ function Gallery() {
 
 	return (
 		<>
-			<Layout name='gallery' bg='thumb5.jpg'>
+			<Layout name='gallery' bg='thumb7.jpg'>
 				<div className='inner'>
 					<ul className='list'>
 						{pics.map((pic, idx) => {

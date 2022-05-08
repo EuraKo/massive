@@ -6,7 +6,7 @@ function Department() {
 	const [members, setMembers] = useState([]);
 	return (
 		<>
-			<Layout name='dapartment' bg='thumb1-1.jpg'></Layout>
+			<Layout name='dapartment' bg='thumb6.jpg'></Layout>
 		</>
 	);
 }

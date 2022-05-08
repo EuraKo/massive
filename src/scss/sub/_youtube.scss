@@ -3,6 +3,7 @@
 		@include inner;
 	}
 	article {
+		cursor: pointer;
 		.pic {
 			height: 47vmin;
 			@include img;
