@@ -22,7 +22,7 @@ function Header(props) {
 					<ul>
 						<li>
 							<NavLink to='/Department' activeStyle={active}>
-								Members
+								Department
 							</NavLink>
 						</li>
 						<li>

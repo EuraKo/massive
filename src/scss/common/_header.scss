@@ -52,6 +52,7 @@ header {
 		}
 	}
 	#gnb {
+		display: none;
 		width: 100%;
 		height: calc(100vh - $headerH);
 		position: fixed;
@@ -79,8 +80,6 @@ header {
 	width: 100%;
 	position: fixed;
 	background: linear-gradient(to bottom, #fff, transparent);
-	#gnb {
-	}
 }
 @include mobile {
 	$headerH: 8rem !global;
@@ -110,6 +109,7 @@ header {
 			display: none;
 		}
 		#gnb {
+			display: block !important;
 			width: 100%;
 			height: $headerH;
 			position: absolute;

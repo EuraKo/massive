@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+const path = process.env.PUBLIC_URL;
 
 function Layout(props) {
 	const frame = useRef(null);
@@ -7,8 +8,13 @@ function Layout(props) {
 	}, []);
 	return (
 		<section className={`content ${props.name}`} ref={frame}>
-			<figure></figure>
-			<h2>{props.name}</h2>
+			<div className='title_box'>
+				<figure>
+					<img src={`${path}/img/${props.bg}`} alt='' />
+				</figure>
+				<h2>{props.name}</h2>
+			</div>
+			{props.children}
 		</section>
 	);
 }

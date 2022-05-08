@@ -5,8 +5,12 @@
 @import './common/reset';
 @import './common/header';
 @import './common/layout';
+@import './common/popup';
 // main
 @import './main/visual';
 
+// sub
+@import './sub/department';
+@import './sub/gallery';
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@100;300;500;700&display=swap');

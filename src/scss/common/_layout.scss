@@ -1,11 +1,29 @@
 .content {
-	h2 {
-		font: 4rem/1 $fontPoint;
-		text-transform: uppercase;
-		text-align: center;
-		opacity: 0;
-		transform: translateY(-1rem);
-		transition: 500ms;
+	.title_box {
+		position: relative;
+		padding: 15rem 0;
+		figure {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+		h2 {
+			font: 4rem/1 $fontPoint;
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 2px;
+			opacity: 0;
+			transform: translateY(-1rem);
+			transition: 500ms;
+		}
 	}
 	&.on {
 		h2 {
