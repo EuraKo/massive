@@ -1,0 +1,88 @@
+.youtube {
+	.inner {
+		@include inner;
+	}
+	article {
+		.pic {
+			height: 47vmin;
+			@include img;
+		}
+		.cont {
+			padding: 2rem 1rem;
+			text-align: center;
+			h3 {
+				font: normal 1.6rem/1 $fontPoint;
+				position: relative;
+				padding-bottom: 1em;
+				&::after {
+					content: '';
+					width: 50px;
+					height: 2px;
+					background: $colorDarkGary;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					transition: 0.5s;
+				}
+			}
+			.desc {
+				font: 1.2rem/1.2 $fontDefault;
+				padding: 1em;
+			}
+		}
+		&:hover {
+			h3::after {
+				width: 100%;
+			}
+		}
+	}
+}
+@include mobile {
+	.youtube {
+		.inner {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		article {
+			width: 49%;
+			margin-right: 2%;
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+			.pic {
+				height: 24vmin;
+			}
+		}
+	}
+}
+@include miniTable {
+	.youtube article .pic {
+		height: 26vw;
+	}
+}
+@include tablet {
+	.youtube article {
+		display: flex;
+		.pic {
+			width: 50%;
+			height: 74%;
+		}
+		.cont {
+			width: 50%;
+			text-align: left;
+			padding: 0 2rem;
+			h3 {
+				line-height: 1.5;
+				&::after {
+					left: 0;
+					transform: translateX(0);
+				}
+			}
+			.desc {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}

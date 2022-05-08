@@ -1,5 +1,6 @@
-.department {
-	.title_box {
-		// background-image: url('../../public/img/thumb1.jpg');
+.dapartment {
+	.title_box figure img {
+		object-fit: contain;
+		object-position: center;
 	}
 }
