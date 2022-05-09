@@ -1,26 +1,76 @@
-[
-  {
-    "name": "julia",
-    "position": "CEO",
-    "team": "CEO",
-    "img": "member1.jpg"
-  },
-  {
-    "name": "julia",
-    "position": "CEO",
-    "team": "CEO",
-    "img": "member2.jpg"
-  },
-  {
-    "name": "julia",
-    "position": "CEO",
-    "team": "CEO",
-    "img": "member3.jpg"
-  },
-  {
-    "name": "julia",
-    "position": "CEO",
-    "team": "CEO",
-    "img": "member4.jpg"
-  }
-]
+{
+  "members": [
+    {
+      "name": "KyoHyan Koo",
+      "position": "Leader",
+      "team": "Management",
+      "img": "member15.jpg"
+    },
+    {
+      "name": "MinWoo Kim",
+      "position": "Senoir",
+      "team": "Management",
+      "img": "member10.jpg"
+    },
+    {
+      "name": "BoYoung Park",
+      "position": "Junior",
+      "team": "Management",
+      "img": "member18.jpg"
+    },
+    {
+      "name": "TeaRi Kim",
+      "position": "Asso ciate",
+      "team": "Management",
+      "img": "member17.jpg"
+    },
+    {
+      "name": "ChangWook Ji",
+      "position": "Leader",
+      "team": "DESIGN",
+      "img": "member13.jpg"
+    },
+    {
+      "name": "BoA Jo",
+      "position": "Senoir",
+      "team": "DESIGN",
+      "img": "member14.jpg"
+    },
+    {
+      "name": "HanNa Kang",
+      "position": "Junior",
+      "team": "DESIGN",
+      "img": "member7.jpg"
+    },
+    {
+      "name": "SooYoung Choi",
+      "position": "Asso ciate",
+      "team": "DESIGN",
+      "img": "member6.jpg"
+    },
+    {
+      "name": "MinJae Kim",
+      "position": "Asso ciate",
+      "team": "DESIGN",
+      "img": "member9.jpg"
+    },
+    {
+      "name": "JiSoo kim",
+      "position": "Asso ciate",
+      "team": "DESIGN",
+      "img": "member8.jpg"
+    },
+    {
+      "name": "Jimin Park",
+      "position": "Asso ciate",
+      "team": "DESIGN",
+      "img": "member16.jpg"
+    },
+    {
+      "name": "ChanMi Kim",
+      "position": "Asso ciate",
+      "team": "DESIGN",
+      "img": "member11.jpg"
+    }
+  ]
+}
