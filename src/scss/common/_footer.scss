@@ -1,0 +1,55 @@
+footer {
+	background: $colorDarkGary;
+	color: #fff;
+	.inner {
+		@include inner;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 3rem;
+	}
+	h2 {
+		font: 1rem/1 $fontPoint;
+		width: 6rem;
+		height: 6rem;
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: 3px solid #fff;
+			padding: 1em 0.3em;
+		}
+	}
+	.sitemap {
+		font-size: 1.2rem;
+		text-align: right;
+		li {
+			margin-bottom: 0.5em;
+		}
+	}
+	.copy {
+		width: 100%;
+		font-size: 1.2rem;
+		margin-top: 2em;
+	}
+}
+@include mobile {
+	footer {
+		.inner {
+			padding: 4rem 1rem;
+		}
+		.sitemap {
+			font-size: 1.6rem;
+			ul {
+				display: flex;
+				margin-top: 0.5em;
+				li {
+					margin-left: 1.5em;
+				}
+			}
+		}
+		.copy {
+			font-size: 1.4rem;
+		}
+	}
+}

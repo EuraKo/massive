@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
-	const active = { color: 'lightblue' };
+	const active = { color: '#1d8ddc' };
 	return (
 		<header className={props.type}>
 			<div className='inner'>
-				<h1>
+				<h1 className='logo'>
 					<NavLink exact to='/'>
 						massive.
 					</NavLink>
