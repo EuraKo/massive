@@ -19,6 +19,7 @@
 			font-size: 1.6rem;
 			width: 50%;
 			padding: 1em;
+			text-align: center;
 			.title {
 				font-weight: bold;
 				margin-bottom: 1rem;
@@ -27,9 +28,15 @@
 				font-size: 1.4rem;
 			}
 			.sns_box {
+				height: 100%;
 				display: flex;
+				justify-content: center;
+				align-items: center;
 				li {
 					margin-right: 1rem;
+					&:last-of-type {
+						margin-right: 0;
+					}
 					a {
 						display: block;
 						padding: 0.3em;
