@@ -1,6 +1,6 @@
 function Popup(props) {
 	return (
-		<aside className='pop'>
+		<aside className={`pop ${props.type}`}>
 			<div className='inner'>
 				<div className='con'>{props.children}</div>
 				<button

@@ -52,3 +52,50 @@
 		}
 	}
 }
+//  투명 배경 타입
+.pop_mini {
+	background: transparent;
+	.inner {
+		width: 80%;
+		max-width: 60rem;
+		height: auto;
+		max-height: 80%;
+		position: relative;
+		background: #fff;
+		box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+		padding-top: 2rem;
+		h2 {
+			font-size: 2rem;
+			font-family: $fontPoint;
+			font-weight: normal;
+			margin-bottom: 2rem;
+		}
+		input[type='text'] {
+			width: 100%;
+		}
+	}
+	.close {
+		top: 2rem;
+	}
+	.btn_wrap {
+		button {
+			margin-right: 2%;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+}
+@include tablet {
+	.pop_mini {
+		.inner {
+			padding: 3rem 2rem;
+			h2 {
+				font-size: 3rem;
+			}
+		}
+		.close {
+			top: 3.5rem;
+		}
+	}
+}

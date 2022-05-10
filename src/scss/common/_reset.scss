@@ -94,7 +94,38 @@ body {
 		background: $colorPoint-1;
 	}
 }
-
+.btn_icon {
+	font-size: 1.2rem;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid #333;
+	border-radius: 50%;
+	transition: color 0.5s;
+	&.btn_del {
+		color: $colorDarkGary;
+		border-color: $colorDarkGary;
+		&:hover {
+			background: $colorDarkGary;
+			color: #fff;
+		}
+	}
+	&.btn_modify {
+		color: $colorPoint-2;
+		border-color: $colorPoint-2;
+		&:hover {
+			background: $colorPoint-2;
+			color: #fff;
+		}
+	}
+	&.btn_success {
+		color: $colorPoint-1;
+		border-color: $colorPoint-1;
+		&:hover {
+			background: $colorPoint-1;
+			color: #fff;
+		}
+	}
+}
 /* 스크롤 감추기 */
 
 .scroll_hidden {

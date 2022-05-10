@@ -1,0 +1,23 @@
+input,
+textarea {
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+textarea {
+	height: 10rem;
+	resize: none;
+	font-family: $fontDefault;
+}
+@include mobile {
+	input[type='text'] {
+		width: 49%;
+		&:first-of-type {
+			margin-right: 2%;
+		}
+	}
+	textarea {
+		height: 20rem;
+	}
+}

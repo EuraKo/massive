@@ -1,0 +1,47 @@
+#notice {
+	.inner {
+		@include inner;
+	}
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			width: 49%;
+			margin-right: 2%;
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+			h2 {
+				font: bold 2.5rem/1 $fontPoint;
+			}
+			&.post {
+				border-top: 1px solid #333;
+				padding: 2rem 1rem;
+			}
+			.title {
+				font: bold 1.6rem/1.2 $fontPoint;
+				margin-bottom: 0.5em;
+			}
+			.comment {
+				font-size: 1.2rem;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+@include mobile {
+	#notice {
+		ul {
+			li {
+				width: 32%;
+				&:nth-of-type(2n) {
+					margin-right: 2%;
+				}
+				&:nth-of-type(3n) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

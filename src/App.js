@@ -5,6 +5,7 @@ import Footer from './components/common/Footer';
 
 // main
 import Visual from './components/main/Visual';
+import Notice from './components/main/Notice';
 //sub
 import Department from './components/sub/Department';
 import Community from './components/sub/Community';
@@ -21,6 +22,7 @@ function App() {
 				<Route exact path='/'>
 					<Header type={'header_main'} />
 					<Visual />
+					<Notice />
 				</Route>
 				<Route path='/'>
 					<Header type={'header_sub'} />
