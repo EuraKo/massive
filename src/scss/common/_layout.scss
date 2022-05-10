@@ -16,20 +16,21 @@
 			}
 		}
 		h2 {
-			font: 2rem/1 $fontPoint;
+			font: 4rem/1 $fontPoint;
+			max-width: 1180px;
+			margin: 0 auto;
+			color: rgba($colorBk, 0.6);
 			text-transform: uppercase;
-			text-align: center;
 			letter-spacing: 2px;
 			opacity: 0;
 			transform: translateY(-1rem);
 			transition: 500ms;
-			margin-top: 2em;
 		}
 	}
 	&.on {
 		h2 {
 			opacity: 1;
-			transform: translateY(0);
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -38,7 +39,16 @@
 		.title_box {
 			// padding: 15rem 0;
 			h2 {
-				font-size: 4rem;
+				font-size: 8rem;
+			}
+		}
+	}
+}
+@include miniTable {
+	.content {
+		.title_box {
+			h2 {
+				font-size: 10rem;
 			}
 		}
 	}

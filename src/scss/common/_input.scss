@@ -1,9 +1,11 @@
-input,
+input[type='text'],
+input[type='password'],
 textarea {
 	width: 100%;
 	border: 1px solid #ccc;
 	padding: 0.5em;
 	margin-bottom: 0.5em;
+	font-size: 1.6rem;
 }
 textarea {
 	height: 10rem;
@@ -11,12 +13,6 @@ textarea {
 	font-family: $fontDefault;
 }
 @include mobile {
-	input[type='text'] {
-		width: 49%;
-		&:first-of-type {
-			margin-right: 2%;
-		}
-	}
 	textarea {
 		height: 20rem;
 	}

@@ -2,9 +2,13 @@
 	.inner {
 		@include inner;
 	}
+	form {
+		max-width: 60rem;
+		margin: 0 auto;
+	}
 	.info {
 		background: #eee;
-		padding: 6rem 0;
+		padding: 3rem 0;
 		margin-top: 4rem;
 		.inner {
 			display: flex;
@@ -14,8 +18,35 @@
 		.item {
 			font-size: 1.6rem;
 			width: 50%;
+			padding: 1em;
+			.title {
+				font-weight: bold;
+				margin-bottom: 1rem;
+			}
 			.desc {
 				font-size: 1.4rem;
+			}
+			.sns_box {
+				display: flex;
+				li {
+					margin-right: 1rem;
+					a {
+						display: block;
+						padding: 0.3em;
+						position: relative;
+						background: $colorPoint-1;
+						border: 1px solid $colorPoint-1;
+						svg {
+							width: 60%;
+							height: 60%;
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							color: #eee;
+						}
+					}
+				}
 			}
 		}
 	}

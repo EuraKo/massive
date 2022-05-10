@@ -45,6 +45,7 @@ function Community() {
 			...posts,
 		]);
 		resetPost();
+		setOpen(false);
 	};
 
 	// 초기화
@@ -86,32 +87,42 @@ function Community() {
 		if (
 			!modifyInput.current.value.trim() ||
 			!modifyTextarea.current.value.trim()
-		)
+		) {
 			return alert('제목과 내용을 입력해주세요.');
+		}
+
 		setAllow(true);
+
 		setPosts(
 			posts.map((post, idx) => {
-				post.title = modifyInput.current.value;
-				post.comment = modifyTextarea.current.value;
-				if (idx === index) post.enableUpdate = false;
+				if (idx === index) {
+					post.title = modifyInput.current.value;
+					post.comment = modifyTextarea.current.value;
+					console.log(modifyTextarea.current.value);
+					post.enableUpdate = false;
+				}
 				return post;
 			})
 		);
 	};
-
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(posts));
+	}, [posts]);
 	return (
 		<>
 			<Layout name='community' bg='thumb5.jpg'>
 				<div className='inner'>
 					<article>
 						<figure>
-							<img src={`${path}/img/visual2.jpg`} alt='' />
+							<img src={`${path}/img/visual3.jpg`} alt='' />
 						</figure>
 						<div className='cont'>
 							<h3>Just How Important Meeting Is For Your Office.</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-								reprehenderit!
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+								ipsam temporibus minus. Architecto, qui error? Necessitatibus
+								ratione odio cumque saepe magni harum officiis aliquid. Impedit
+								quibusdam accusamus dignissimos cumque culpa.
 							</p>
 						</div>
 					</article>

@@ -2,25 +2,25 @@
 	article {
 		display: flex;
 		margin-bottom: 2rem;
-		img {
-			width: 40vw;
-			height: 30vmin;
-			object-fit: cover;
+		figure {
+			width: 40%;
+			@include img;
 		}
 		.cont {
+			width: 60%;
 			padding: 1rem;
 			background: #fff;
 			position: relative;
-			&::before {
-				content: '';
-				width: 50%;
-				height: 100%;
-				background: #fff;
-				position: absolute;
-				left: -8%;
-				top: 0;
-				transform: skew(-10deg);
-			}
+			// &::before {
+			// 	content: '';
+			// 	width: 50%;
+			// 	height: 100%;
+			// 	background: #fff;
+			// 	position: absolute;
+			// 	left: -8%;
+			// 	top: 0;
+			// 	transform: skew(-10deg);
+			// }
 			h3 {
 				position: relative;
 				z-index: 1;
@@ -153,6 +153,17 @@
 					}
 				}
 			}
+		}
+	}
+}
+@include tablet {
+	.community article {
+		figure {
+			width: 30%;
+		}
+		.cont {
+			width: 70%;
+			padding: 9rem;
 		}
 	}
 }

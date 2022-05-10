@@ -1,5 +1,11 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFacebookF,
+	faTwitter,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 const path = process.env.PUBLIC_URL;
 
@@ -22,7 +28,7 @@ function Location(props) {
 
 	return (
 		<>
-			<Layout name='location' bg='thumb8.jpg'>
+			<Layout name='location' bg='thumb10.jpg'>
 				<div className='info'>
 					<div className='inner'>
 						<div className='item'>
@@ -39,6 +45,25 @@ function Location(props) {
 							<div className='title'>Email</div>
 							<div className='desc'>sow5252@gmail.com</div>
 						</div>
+						<div className='item'>
+							<ul className='sns_box'>
+								<li>
+									<a href='#' className='btn_icon'>
+										<FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
+									</a>
+								</li>
+								<li>
+									<a href='#' className='btn_icon'>
+										<FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
+									</a>
+								</li>
+								<li>
+									<a href='#' className='btn_icon'>
+										<FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div className='inner'>
@@ -53,7 +78,9 @@ function Location(props) {
 								<input type='text' placeholder='Name' />
 								<input type='text' placeholder='E - mail' />
 								<textarea name='' id='' placeholder='comments'></textarea>
-								<input type='submit' value='SEND' />
+								<div className='btn_wrap'>
+									<input type='submit' className='btn_normal' value='SEND' />
+								</div>
 							</div>
 						</fieldset>
 					</form>

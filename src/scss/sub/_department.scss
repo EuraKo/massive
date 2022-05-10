@@ -1,6 +1,7 @@
 .dapartment {
 	.inner {
 		@include inner;
+		padding-top: 0;
 	}
 	.quote {
 		display: flex;
@@ -142,6 +143,9 @@
 }
 @include miniTable {
 	.dapartment {
+		.inner {
+			padding-top: 0;
+		}
 		.quote {
 			align-items: center;
 			margin-bottom: 6rem;
