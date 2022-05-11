@@ -18,11 +18,11 @@ function Location(props) {
 	const info = [
 		{
 			title: 'HEAD OFFICE',
-			latlng: new kakao.maps.LatLng(33.450701, 126.570667),
+			latlng: new kakao.maps.LatLng(37.4020048, 127.1085146),
 		},
 		{
 			title: 'OFFICE PANKYO',
-			latlng: new kakao.maps.LatLng(37.4020048, 127.1085146),
+			latlng: new kakao.maps.LatLng(33.450701, 126.570667),
 		},
 		{
 			title: 'SERVICE CENTER',

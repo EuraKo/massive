@@ -127,13 +127,16 @@
 }
 @include miniTable {
 	.community {
-		article .cont {
-			padding: 2rem;
-			h3 {
-				font-size: 3rem;
-			}
-			p {
-				font-size: 2rem;
+		article {
+			align-items: center;
+			.cont {
+				padding: 4rem;
+				h3 {
+					font-size: 3rem;
+				}
+				p {
+					font-size: 2rem;
+				}
 			}
 		}
 		.commu_list {
@@ -164,6 +167,9 @@
 		.cont {
 			width: 70%;
 			padding: 9rem;
+			h3 {
+				margin-bottom: 1.5em;
+			}
 		}
 	}
 }

@@ -85,7 +85,7 @@ function Join() {
 						</fieldset>
 					</form>
 					<figure className='bg_city'>
-						<img src={`${path}/img/city.png`} alt='' />
+						<img src={`${path}/img/pattern.jpg`} alt='' />
 					</figure>
 				</div>
 			</Layout>
