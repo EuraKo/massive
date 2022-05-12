@@ -23,7 +23,7 @@
 			letter-spacing: 2px;
 			opacity: 0;
 			transform: translateY(-1rem);
-			transition: 500ms;
+			transition: opacity 500ms, transform 500ms;
 		}
 		+ .inner {
 			min-height: calc(100vh - (8rem + 14rem));
