@@ -4,7 +4,7 @@
 		// padding: 10rem 0;
 		figure {
 			width: 100%;
-			height: 20rem;
+			height: 10rem;
 			// position: absolute;
 			// top: 0;
 			// left: 0;
@@ -26,6 +26,9 @@
 			transform: translateY(-1rem);
 			transition: 500ms;
 		}
+		+ .inner {
+			min-height: calc(100vh - (8rem + 14rem));
+		}
 	}
 	&.on {
 		h2 {
@@ -37,9 +40,15 @@
 @include mobile {
 	.content {
 		.title_box {
+			figure {
+				height: 20rem;
+			}
 			// padding: 15rem 0;
 			h2 {
 				font-size: 8rem;
+			}
+			& + .inner {
+				min-height: calc(100vh - (8rem + 30rem));
 			}
 		}
 	}

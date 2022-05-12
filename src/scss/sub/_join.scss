@@ -41,8 +41,10 @@
 			.checkbox_group {
 				label {
 					font-size: 1.6rem;
-					margin-left: 0.5rem;
 					margin-right: 1rem;
+					input {
+						margin-right: 0.5rem;
+					}
 				}
 			}
 			select {
@@ -68,6 +70,8 @@
 	.join {
 		form {
 			padding: 4rem 6rem;
+			border-width: 0.9rem;
+			border-color: #aaa;
 		}
 		.inner {
 			padding-top: 0;

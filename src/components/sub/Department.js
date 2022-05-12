@@ -1,6 +1,12 @@
 import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import {
+	faFacebookF,
+	faTwitter,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 const path = process.env.PUBLIC_URL;
@@ -72,6 +78,23 @@ function Department() {
 							{members.map((item, idx) => {
 								return (
 									<li key={idx}>
+										<div className='effect_line'>
+											<span></span>
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+										<div className='sns_box'>
+											<a href='#' className='btn_icon'>
+												<FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
+											</a>
+											<a href='#' className='btn_icon'>
+												<FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
+											</a>
+											<a href='#' className='btn_icon'>
+												<FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+											</a>
+										</div>
 										<div className='pic'>
 											<img src={`${path}/img/department/${item.img}`} alt='' />
 										</div>

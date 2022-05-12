@@ -1,5 +1,8 @@
 import Layout from '../common/Layout';
+import { useState, useEffect } from 'react';
+
 const path = process.env.PUBLIC_URL;
+
 function Join() {
 	return (
 		<>
@@ -42,29 +45,54 @@ function Join() {
 								<div className='input_group'>
 									<div className='form_title'>AGE</div>
 									<div className='radio_group'>
-										<input type='radio' name='age' id='10s' />
-										<label htmlFor='10s'>10 ~ 20</label>
-										<input type='radio' name='20s' id='female' />
-										<label htmlFor='20s'>21 ~ 30</label>
-										<input type='radio' name='age' id='30s' />
-										<label htmlFor='30s'>31 ~ 40</label>
-										<input type='radio' name='age' id='40s' />
-										<label htmlFor='40s'>41 ~ 50</label>
-										<input type='radio' name='age' id='50s' />
-										<label htmlFor='50s'>51 ~</label>
+										<label htmlFor='10s' className='radio'>
+											<input type='radio' name='age' id='10s' />
+											10 ~ 20
+										</label>
+
+										<label htmlFor='20s' className='radio'>
+											<input type='radio' name='20s' id='female' />
+											21 ~ 30
+										</label>
+
+										<label htmlFor='30s' className='radio'>
+											<input type='radio' name='age' id='30s' />
+											31 ~ 40
+										</label>
+
+										<label htmlFor='40s' className='radio'>
+											<input type='radio' name='age' id='40s' />
+											41 ~ 50
+										</label>
+
+										<label htmlFor='50s' className='radio'>
+											<input type='radio' name='age' id='50s' />
+											51 ~
+										</label>
 									</div>
 								</div>
 								<div className='input_group'>
 									<div className='form_title'>HOBBY</div>
 									<div className='checkbox_group'>
-										<input type='checkbox' name='hobby' id='music' />
-										<label htmlFor='music'>MUSIC</label>
-										<input type='checkbox' name='hobby' id='game' />
-										<label htmlFor='game'>GAME</label>
-										<input type='checkbox' name='hobby' id='cooking' />
-										<label htmlFor='cooking'>COOKING</label>
-										<input type='checkbox' name='hobby' id='trip' />
-										<label htmlFor='trip'>TRIP</label>
+										<label htmlFor='music'>
+											<input type='checkbox' name='hobby' id='music' />
+											MUSIC
+										</label>
+
+										<label htmlFor='game'>
+											<input type='checkbox' name='hobby' id='game' />
+											GAME
+										</label>
+
+										<label htmlFor='cooking'>
+											<input type='checkbox' name='hobby' id='cooking' />
+											COOKING
+										</label>
+
+										<label htmlFor='trip'>
+											<input type='checkbox' name='hobby' id='trip' />
+											TRIP
+										</label>
 									</div>
 								</div>
 								<div className='input_group'>
