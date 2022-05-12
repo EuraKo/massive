@@ -43,6 +43,34 @@ textarea {
 		}
 	}
 } */
+
+.search_area {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 2rem;
+	input {
+		max-width: 20rem;
+		height: 3.5rem;
+		border: 0;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 0;
+		position: relative;
+		transition: 0.3s;
+
+		&:focus {
+			outline: 0;
+			border-color: $colorPoint-1;
+		}
+	}
+	button {
+		width: 3.5rem;
+		height: 3.5rem;
+		margin-left: 1rem;
+		background: $colorPoint-1;
+		border-radius: 50%;
+		color: #fff;
+	}
+}
 @include mobile {
 	textarea {
 		height: 20rem;

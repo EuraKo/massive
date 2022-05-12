@@ -2,6 +2,20 @@
 	.inner {
 		@include inner;
 	}
+	.loader {
+		margin: 2rem 0;
+		height: 100px;
+		width: 100%;
+		text-align: center;
+		padding: 1em;
+		margin: 0 auto 1em;
+		display: inline-block;
+		vertical-align: top;
+		svg path,
+		svg rect {
+			fill: $colorPoint-1;
+		}
+	}
 	.list {
 		display: flex;
 		flex-wrap: wrap;
@@ -13,6 +27,9 @@
 			padding: 1rem 0;
 			border-top: 1px solid #ccc;
 			cursor: pointer;
+			transition: opacity 0.3s, transform 0.5s;
+			opacity: 0;
+			transform: translateY(100px);
 			&::after {
 				content: '';
 				display: block;
@@ -46,6 +63,12 @@
 					width: 100%;
 				}
 			}
+		}
+	}
+	.on_list {
+		li {
+			opacity: 1;
+			transform: translateY(0px);
 		}
 	}
 }
