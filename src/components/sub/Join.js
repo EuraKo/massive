@@ -110,6 +110,9 @@ function Join() {
 									</select>
 								</div>
 							</div>
+							<div className='btn_wrap'>
+								<input type='submit' className='btn_normal' value='JOIN' />
+							</div>
 						</fieldset>
 					</form>
 					<figure className='bg_city'>
