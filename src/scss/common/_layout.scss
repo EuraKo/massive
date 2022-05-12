@@ -28,12 +28,21 @@
 		}
 		+ .inner {
 			min-height: calc(100vh - (8rem + 14rem));
+			transition: 500ms;
+			transition-delay: 500ms;
+			opacity: 0;
+			transform: translateY(100px);
 		}
 	}
+
 	&.on {
 		h2 {
 			opacity: 1;
 			transform: translateY(-50%);
+		}
+		.inner {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 }
