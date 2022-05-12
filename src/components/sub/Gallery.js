@@ -148,7 +148,11 @@ function Gallery() {
 										setIndex(idx);
 									}}>
 									<div className='cont'>
-										<h3>{pic.title}</h3>
+										<h3>
+											{pic.title.length > 50
+												? pic.title.substr(0, 50) + '...'
+												: pic.title}
+										</h3>
 										<div className='owner'>{pic.owner}</div>
 									</div>
 									<div className='pic'>
