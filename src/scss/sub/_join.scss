@@ -24,7 +24,7 @@
 		}
 		.input_group {
 			width: 100%;
-			margin-bottom: 2rem;
+			margin-bottom: 2.5rem;
 			.form_title {
 				display: block;
 				font-size: 1.8rem;
@@ -36,12 +36,13 @@
 				border: 0;
 				border-bottom: 1px solid #333;
 				background: transparent;
+				margin-bottom: 0;
 			}
 			.radio_group,
 			.checkbox_group {
 				label {
 					font-size: 1.6rem;
-					margin-right: 1rem;
+					margin-right: 1.5rem;
 					input {
 						margin-right: 0.5rem;
 					}
