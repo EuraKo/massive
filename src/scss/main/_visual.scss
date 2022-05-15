@@ -1,6 +1,75 @@
-.section_visual {
-	img {
+#visual {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	figure {
 		width: 100%;
-		object-fit: cover;
+		height: 100%;
+		img,
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-fit: center;
+		}
+	}
+	.inner {
+		@include inner;
+		position: absolute;
+		top: 8rem;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		h2 {
+			font: 10vw/1 $fontPoint;
+		}
+		.bg_text {
+			font: 16vw/1 $fontPoint;
+			position: absolute;
+			bottom: -16vw;
+			left: 3rem;
+			color: rgba(255, 255, 255, 0.6);
+		}
+	}
+	.btn_scroll {
+		position: absolute;
+		bottom: 5vh;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		font-family: $fontPoint;
+		text-align: center;
+		svg {
+			width: 2.5rem;
+			display: block;
+			margin: 0 auto 0.5rem;
+			fill: #fff;
+		}
+	}
+}
+@include miniTable {
+	#visual {
+		.inner {
+			top: 50%;
+			h2 {
+				width: 60%;
+				font-size: 6rem;
+			}
+			.bg_text {
+				font-size: 17rem;
+				bottom: -13rem;
+			}
+		}
+	}
+}
+@include tablet {
+	#visual {
+		.inner {
+			.bg_text {
+				font-size: 20rem;
+				bottom: -15rem;
+				left: 0;
+			}
+		}
 	}
 }

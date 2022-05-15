@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+const path = process.env.PUBLIC_URL;
 
 function Notice() {
 	const getLocalData = () => {
@@ -59,33 +60,38 @@ function Notice() {
 	return (
 		<section id='notice'>
 			<div className='inner'>
-				<ul>
-					<li>
-						<h2>COMMUNITY</h2>
-					</li>
-					{posts.map((post, idx) => {
-						if (idx < 5) {
-							return (
-								<li key={idx} className='post'>
-									<div className='title'>
-										{post.title.length > 50
-											? post.title.substr(0, 50) + '...'
-											: post.title}
-									</div>
-									<div className='comment'>
-										{post.comment.length > 100
-											? post.comment.substr(0, 100) + '...'
-											: post.comment}
-									</div>
-								</li>
-							);
-						}
-					})}
-				</ul>
-				<div className='btn_wrap'>
-					<NavLink to='/Community' className='btn_normal'>
-						MORE
-					</NavLink>
+				<div className='title_wrap'>
+					<h2>COMMUNITY</h2>
+					<figure>
+						<img src={`${path}/img/bg2.jpg`} alt='' />
+					</figure>
+				</div>
+				<div className='list_box'>
+					<ul>
+						{posts.map((post, idx) => {
+							if (idx < 4) {
+								return (
+									<li key={idx} className='post'>
+										<div className='title'>
+											{post.title.length > 50
+												? post.title.substr(0, 50) + '...'
+												: post.title}
+										</div>
+										<div className='comment'>
+											{post.comment.length > 100
+												? post.comment.substr(0, 300) + '...'
+												: post.comment}
+										</div>
+									</li>
+								);
+							}
+						})}
+					</ul>
+					<div className='btn_wrap'>
+						<NavLink to='/Community' className='btn_normal'>
+							MORE
+						</NavLink>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -17,6 +17,7 @@ function Community() {
 	const textarea = useRef(null);
 	const modifyInput = useRef(null);
 	const modifyTextarea = useRef(null);
+	const pop = useRef(null);
 
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
@@ -130,7 +131,9 @@ function Community() {
 						<button
 							type='button'
 							className='btn_normal'
-							onClick={() => setOpen(true)}>
+							onClick={() => {
+								pop.current.open();
+							}}>
 							comment
 						</button>
 					</div>
@@ -200,31 +203,21 @@ function Community() {
 					</div>
 				</div>
 			</Layout>
-			{open ? (
-				<>
-					<Popup type='pop_mini' setOpen={setOpen}>
-						<div className='input_box'>
-							<h2>comments</h2>
-							<input type='text' placeholder='title' ref={input} />
-							<textarea placeholder='comments' ref={textarea}></textarea>
-							<div className='btn_wrap'>
-								<button
-									type='button'
-									className='btn_normal'
-									onClick={resetPost}>
-									DELETE
-								</button>
-								<button
-									type='button'
-									className='btn_normal'
-									onClick={craetePost}>
-									CREAT
-								</button>
-							</div>
-						</div>
-					</Popup>
-				</>
-			) : null}
+			<Popup type='pop_mini' ref={pop}>
+				<div className='input_box'>
+					<h2>comments</h2>
+					<input type='text' placeholder='title' ref={input} />
+					<textarea placeholder='comments' ref={textarea}></textarea>
+					<div className='btn_wrap'>
+						<button type='button' className='btn_normal' onClick={resetPost}>
+							DELETE
+						</button>
+						<button type='button' className='btn_normal' onClick={craetePost}>
+							CREAT
+						</button>
+					</div>
+				</div>
+			</Popup>
 		</>
 	);
 }

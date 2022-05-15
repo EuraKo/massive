@@ -2,7 +2,12 @@ $headerH: 6rem;
 header {
 	height: $headerH;
 	position: relative;
-	@include inner;
+	z-index: 5;
+	.inner {
+		@include inner;
+		height: 100%;
+		position: relative;
+	}
 	h1 {
 		font: 1rem/1 $fontPoint;
 		width: 6rem;
@@ -17,6 +22,7 @@ header {
 			height: 100%;
 			border: 3px solid #333;
 			padding: 1em 0.3em;
+			background: rgba(255, 255, 255, 0.5);
 		}
 	}
 	.mo_btn {
@@ -138,6 +144,13 @@ header {
 				bottom: 50%;
 				transform: translateY(50%);
 			}
+		}
+	}
+}
+@include tablet {
+	header {
+		.inner {
+			padding: 0;
 		}
 	}
 }

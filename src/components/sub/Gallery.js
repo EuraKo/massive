@@ -9,8 +9,8 @@ import axios from 'axios';
 function Gallery() {
 	const frame = useRef(null);
 	const input = useRef(null);
+	const pop = useRef(null);
 	const [pics, setPics] = useState([]);
-	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [index, setIndex] = useState(0);
 	const [enableClick, setEnableClick] = useState(true);
@@ -53,8 +53,9 @@ function Gallery() {
 	};
 	const showSearch = (e) => {
 		const result = input.current.value.trim();
+		console.log(result);
 
-		if (!result) return alert('입력하세요');
+		if (!result) return alert('단어를 입력하세요');
 		input.current.value = '';
 
 		if (enableClick) {
@@ -89,7 +90,10 @@ function Gallery() {
 								if (e.key === 'Enter') showSearch();
 							}}
 						/>
-						<button onClick={() => showSearch}>
+						<button
+							onClick={() => {
+								showSearch();
+							}}>
 							<FontAwesomeIcon icon={faMagnifyingGlass} />
 						</button>
 					</div>
@@ -144,7 +148,7 @@ function Gallery() {
 								<li
 									key={idx}
 									onClick={() => {
-										setOpen(true);
+										pop.current.open();
 										setIndex(idx);
 									}}>
 									<div className='cont'>
@@ -167,14 +171,16 @@ function Gallery() {
 					</ul>
 				</div>
 			</Layout>
-			{open ? (
-				<Popup setOpen={setOpen}>
-					<img
-						src={`https://live.staticflickr.com/${pics[index].server}/${pics[index].id}_${pics[index].secret}_b.jpg`}
-						alt=''
-					/>
-				</Popup>
-			) : null}
+			<Popup ref={pop} type='pop_full'>
+				{pics.length !== 0 ? (
+					<>
+						<img
+							src={`https://live.staticflickr.com/${pics[index].server}/${pics[index].id}_${pics[index].secret}_b.jpg`}
+							alt=''
+						/>
+					</>
+				) : null}
+			</Popup>
 		</>
 	);
 }

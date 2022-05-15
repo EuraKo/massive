@@ -1,27 +1,23 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Youtube() {
-	const [vids, setVids] = useState([]);
-	const [open, setOpen] = useState(false);
+	const vidData = useSelector((store) => store.youtubeReducer.youtube);
+
+	const pop = useRef(null);
 	const [index, setIndex] = useState(0);
 
-	useEffect(() => {
-		const playListId = 'PLlM8MQlXeresOXqKmguYK0m04KTjnamS4';
-		const key = 'AIzaSyBmkrTuDWtAo4Y49kWA9tJVe6DvS6usIkA';
-		const num = 10;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`;
-		axios.get(url).then((json) => {
-			setVids(json.data.items);
-		});
-	}, []);
+	const handleClick = (index) => {
+		pop.current.open();
+		setIndex(index);
+	};
 	return (
 		<>
 			<Layout name='youtube' bg='thumb3.jpg'>
 				<div className='inner'>
-					{vids.map((vid, idx) => {
+					{vidData.map((vid, idx) => {
 						let title = vid.snippet.title;
 						let desc = vid.snippet.description;
 						let date = vid.snippet.publishedAt;
@@ -29,8 +25,7 @@ function Youtube() {
 							<article
 								key={idx}
 								onClick={() => {
-									setOpen(true);
-									setIndex(idx);
+									handleClick(idx);
 								}}>
 								<div className='pic'>
 									<img src={vid.snippet.thumbnails.standard.url} alt='' />
@@ -49,12 +44,14 @@ function Youtube() {
 					})}
 				</div>
 			</Layout>
-			{open ? (
-				<Popup setOpen={setOpen}>
-					<iframe
-						src={`https://www.youtube.com/embed/${vids[index].snippet.resourceId.videoId}`}></iframe>
-				</Popup>
-			) : null}
+			<Popup ref={pop} type='pop_full'>
+				{vidData.length !== 0 ? (
+					<>
+						<iframe
+							src={`https://www.youtube.com/embed/${vidData[index].snippet.resourceId.videoId}`}></iframe>
+					</>
+				) : null}
+			</Popup>
 		</>
 	);
 }

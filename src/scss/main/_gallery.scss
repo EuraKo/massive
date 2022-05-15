@@ -1,0 +1,153 @@
+#gallery {
+	.inner {
+		@include inner;
+	}
+	h2 {
+		font: 3rem/1 $fontPoint;
+		margin-bottom: 1em;
+		span {
+			display: inline-block;
+			border-bottom: 3px solid #333;
+			padding-right: 0.3em;
+		}
+	}
+
+	.gallery_box {
+		.thumb_box {
+			height: 25vw;
+			ul {
+				display: flex;
+				height: 100%;
+				li {
+					width: 25%;
+					height: 100%;
+					padding: 0.4rem 0.2rem;
+					button {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						@include img;
+						&::after {
+							content: '';
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: #fff;
+							transition: opacity 0.3s;
+							opacity: 0.6;
+						}
+					}
+					&.on {
+						button::after {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+		.cont_box {
+			width: 100%;
+			height: 50vh;
+			ul {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				li {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					.pic {
+						width: 100%;
+						height: 100%;
+						@include img;
+					}
+					h3 {
+						width: 100%;
+						font-size: 3rem;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						padding: 2em 1em;
+						color: #fff;
+					}
+					.btn_modal {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						background: #fff;
+						padding: 1rem;
+						border: 1px solid #fff;
+					}
+				}
+			}
+		}
+	}
+}
+@include mobile {
+	#gallery {
+		h2 {
+			width: 50%;
+			span {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+@include miniTable {
+	#gallery {
+		.inner {
+			display: flex;
+			justify-content: space-between;
+		}
+		h2 {
+			font-size: 3.5rem;
+			padding-right: 4rem;
+			padding-top: 4rem;
+			span {
+				display: table;
+				margin-bottom: 0.5em;
+				padding-right: 0;
+			}
+		}
+		.gallery_box {
+			width: 100%;
+			max-width: 80rem;
+			max-height: 50rem;
+			.thumb_box {
+				height: 25%;
+			}
+		}
+	}
+}
+@include tablet {
+	#gallery {
+		.gallery_box {
+			display: flex;
+			.thumb_box {
+				width: 10vw;
+				ul {
+					display: block;
+					li {
+						width: 100%;
+						padding-right: 1em;
+						&:first-of-type {
+							padding-top: 0;
+						}
+						&:last-of-type {
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+			.cont_box {
+				width: 80%;
+				height: 100%;
+			}
+		}
+	}
+}

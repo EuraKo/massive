@@ -53,6 +53,18 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	button,
+	a,
+	input[type='submit'],
+	input[type='reset'] {
+		margin-right: 0.5em;
+	}
+	button:last-child,
+	a:last-child,
+	input[type='submit']:last-child,
+	input[type='reset']:last-child {
+		margin-right: 0;
+	}
 }
 
 .btn_more {

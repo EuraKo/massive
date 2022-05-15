@@ -114,7 +114,12 @@ function Join() {
 		setVal({ ...val, [name]: isSelected });
 	};
 
-	const handelSubmit = (e) => {
+	const handleReset = () => {
+		setVal(initVal);
+		setErr({});
+	};
+
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErr(check(val));
 	};
@@ -130,7 +135,7 @@ function Join() {
 		<>
 			<Layout name='join' bg='thumb11.jpg'>
 				<div className='inner'>
-					<form onSubmit={handelSubmit}>
+					<form onSubmit={handleSubmit}>
 						<fieldset>
 							<legend>회원가입하기</legend>
 							<div className='form_wrap'>
@@ -324,6 +329,12 @@ function Join() {
 								</div>
 							</div>
 							<div className='btn_wrap'>
+								<input
+									type='reset'
+									className='btn_normal'
+									value='RESET'
+									onClick={handleReset}
+								/>
 								<input
 									type='submit'
 									className='btn_normal'
