@@ -4,7 +4,11 @@ function Visual() {
 		<section id='visual'>
 			<figure>
 				{/* <img src={`${path}/img/visual.jpg`} alt='' /> */}
-				<video src={`${path}/img/whiteHouse.mp4`} muted autoPlay loop></video>
+				<video
+					src={`${path}/img/whiteHouse_row.mp4`}
+					muted
+					autoPlay
+					loop></video>
 			</figure>
 			<div className='inner'>
 				<h2>Mumber of House.</h2>
