@@ -45,7 +45,7 @@ function Gallery() {
 													changeImg(e, idx);
 												}}>
 												<img
-													src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_s.jpg`}
+													src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
 													alt=''
 												/>
 											</button>

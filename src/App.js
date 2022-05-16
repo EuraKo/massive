@@ -29,7 +29,7 @@ function App() {
 		dispatch({ type: types.YOUTUBE.start });
 		dispatch({
 			type: types.GALLERY.start,
-			opt: { type: 'user', count: 100, user: '195406071@N05' },
+			opt: { type: 'user', count: 20, user: '195406071@N05' },
 		});
 	}, []);
 
