@@ -74,8 +74,11 @@
 @include tablet {
 	#members {
 		.swiper_box {
+			.inner {
+				padding-bottom: 20rem;
+			}
 			.swiper-pagination {
-				bottom: -4rem;
+				bottom: -6rem;
 			}
 			.swiper-pagination-bullet {
 				width: 1rem;
