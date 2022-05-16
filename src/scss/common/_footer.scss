@@ -34,9 +34,11 @@ footer {
 		margin-top: 2em;
 	}
 }
+main + footer {
+	margin-top: 0;
+}
 @include mobile {
 	footer {
-		margin-top: 12rem;
 		.inner {
 			padding: 4rem 3rem 6rem;
 		}

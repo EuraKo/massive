@@ -4,47 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import * as types from '../../redux/actionType';
 
 function Gallery() {
+	const { gallery } = useSelector((store) => store.galleryReducer);
+	const dispatch = useDispatch();
 	const frame = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
-	const [pics, setPics] = useState([]);
+	const [opt, setOpt] = useState({
+		type: 'user',
+		count: 20,
+		user: '195406071@N05',
+	});
 	const [loading, setLoading] = useState(true);
 	const [index, setIndex] = useState(0);
 	const [enableClick, setEnableClick] = useState(true);
 
-	const masonryOptions = {
-		transitionDuration: '0.5s',
-	};
-
-	const getFlickr = async (opt) => {
-		const key = 'df93661d16064f006391d9d061379d39';
-		const num = opt.count;
-		const method_interest = 'flickr.interestingness.getList';
-		const method_search = 'flickr.photos.search';
-		const method_user = 'flickr.people.getPhotos';
-		let url = '';
-
-		if (opt.type === 'interest') {
-			url = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&nojsoncallback=1&format=json`;
-		}
-
-		if (opt.type === 'search') {
-			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&nojsoncallback=1&format=json&tags=${opt.tags}`;
-		}
-		if (opt.type === 'user') {
-			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&nojsoncallback=1&format=json&user_id=${opt.user}`;
-		}
-
-		await axios.get(url).then((json) => {
-			if (json.data.photos.photo.length === 0) {
-				alert('해당 검색어에 이미지가 없습니다.');
-				return;
-			}
-			setPics(json.data.photos.photo);
-		});
+	const endLoading = () => {
 		setTimeout(() => {
 			frame.current.classList.add('on_list');
 			setLoading(false);
@@ -53,7 +31,6 @@ function Gallery() {
 	};
 	const showSearch = (e) => {
 		const result = input.current.value.trim();
-		console.log(result);
 
 		if (!result) return alert('단어를 입력하세요');
 		input.current.value = '';
@@ -63,20 +40,21 @@ function Gallery() {
 			setLoading(true);
 			frame.current.classList.remove('on_list');
 
-			getFlickr({
+			setOpt({
 				type: 'search',
 				count: 20,
-				tags: result,
+				tag: result,
 			});
 		}
 	};
+
 	useEffect(() => {
-		getFlickr({
-			type: 'user',
-			user: '195406071@N05',
-			count: 20,
-		});
-	}, []);
+		dispatch({ type: types.GALLERY.start, opt });
+	}, [opt]);
+
+	useEffect(() => {
+		if (gallery.length !== 0) endLoading();
+	}, [gallery]);
 
 	return (
 		<>
@@ -143,7 +121,7 @@ function Gallery() {
 						</div>
 					) : null}
 					<ul className='list'>
-						{pics.map((pic, idx) => {
+						{gallery.map((pic, idx) => {
 							return (
 								<li
 									key={idx}
@@ -172,10 +150,10 @@ function Gallery() {
 				</div>
 			</Layout>
 			<Popup ref={pop} type='pop_full'>
-				{pics.length !== 0 ? (
+				{gallery.length !== 0 ? (
 					<>
 						<img
-							src={`https://live.staticflickr.com/${pics[index].server}/${pics[index].id}_${pics[index].secret}_b.jpg`}
+							src={`https://live.staticflickr.com/${gallery[index].server}/${gallery[index].id}_${gallery[index].secret}_b.jpg`}
 							alt=''
 						/>
 					</>

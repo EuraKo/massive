@@ -1,9 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setYoutube } from './redux/action';
-
-import axios from 'axios';
+import * as types from './redux/actionType';
 
 // common
 import Header from './components/common/Header';
@@ -26,20 +24,13 @@ const path = process.env.PUBLIC_URL;
 function App() {
 	const dispatch = useDispatch();
 
-	const fetchYoutube = async () => {
-		const playListId = 'PLlM8MQlXeresOXqKmguYK0m04KTjnamS4';
-		const key = 'AIzaSyBmkrTuDWtAo4Y49kWA9tJVe6DvS6usIkA';
-		const num = 10;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`;
-
-		await axios.get(url).then((json) => {
-			const action = setYoutube(json.data.items);
-			dispatch(action);
-		});
-	};
-
 	useEffect(() => {
-		fetchYoutube();
+		dispatch({ type: types.MEMBERS.start });
+		dispatch({ type: types.YOUTUBE.start });
+		dispatch({
+			type: types.GALLERY.start,
+			opt: { type: 'user', count: 100, user: '195406071@N05' },
+		});
 	}, []);
 
 	return (

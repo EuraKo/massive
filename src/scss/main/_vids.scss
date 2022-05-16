@@ -175,6 +175,7 @@
 @include tablet {
 	#vids {
 		.title_wrap {
+			margin-bottom: 6rem;
 			.disc {
 				position: relative;
 				&::after {

@@ -7,18 +7,11 @@ import {
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
 const path = process.env.PUBLIC_URL;
-function Department() {
-	const [members, setMembers] = useState([]);
 
-	useEffect(() => {
-		axios.get(`${path}/DB/department.json`).then((json) => {
-			console.log(json.data);
-			setMembers(json.data.members);
-		});
-	}, []);
+function Department() {
+	const members = useSelector((store) => store.membersReducer.members);
 
 	return (
 		<>

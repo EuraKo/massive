@@ -58,7 +58,7 @@ function Notice() {
 	}, []);
 
 	return (
-		<section id='notice'>
+		<section id='notice' className='scroll_section'>
 			<div className='inner'>
 				<div className='title_wrap'>
 					<h2>COMMUNITY</h2>

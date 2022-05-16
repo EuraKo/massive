@@ -23,7 +23,7 @@ function Vids() {
 
 	return (
 		<>
-			<section id='vids'>
+			<section id='vids' className='scroll_section'>
 				<div className='inner'>
 					<div className='title_wrap'>
 						<h2>Our Videos</h2>
@@ -35,6 +35,7 @@ function Vids() {
 					<div className='vid_box'>
 						<Swiper
 							slidesPerView={1}
+							grabCursor={true}
 							navigation={{
 								prevEl: navigationPrevRef.current,
 								nextEl: navigationNextRef.current,

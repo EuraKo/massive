@@ -1,17 +1,13 @@
 const path = process.env.PUBLIC_URL;
 function Visual() {
 	return (
-		<section id='visual'>
+		<section id='visual' className='scroll_section'>
 			<figure>
 				{/* <img src={`${path}/img/visual.jpg`} alt='' /> */}
-				<video
-					src={`${path}/img/whiteHouse_row.mp4`}
-					muted
-					autoPlay
-					loop></video>
+				<video src={`${path}/img/whiteHouse.mp4`} muted autoPlay loop></video>
 			</figure>
 			<div className='inner'>
-				<h2>Mumber of House.</h2>
+				<h2>Number of House.</h2>
 				<div className='bg_text'>MASSIVE.</div>
 			</div>
 			<button className='btn_scroll'>
