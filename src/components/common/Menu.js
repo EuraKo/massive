@@ -88,6 +88,7 @@ const Menu = forwardRef((props, ref) => {
 							<NavLink to='/Location'>Location</NavLink>
 						</motion.li>
 						<motion.li
+							className='join'
 							initial={{ opacity: 0, x: -20 }}
 							animate={{
 								opacity: 1,

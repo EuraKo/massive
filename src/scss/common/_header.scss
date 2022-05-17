@@ -144,7 +144,9 @@ header {
 			}
 			.join {
 				font-size: 1.6rem;
+				position: absolute;
 				bottom: 50%;
+				right: 1rem;
 				transform: translateY(50%);
 			}
 		}

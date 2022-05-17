@@ -10,6 +10,7 @@
 	ul {
 		width: 280px;
 		height: 100%;
+		position: relative;
 		background: #fff;
 		padding: 10rem 1rem;
 		li {
@@ -22,7 +23,13 @@
 	.join {
 		font-size: 2rem;
 		position: absolute;
-		bottom: 1rem;
+		bottom: 0;
 		right: 1rem;
+		color: $colorPoint-2;
+	}
+}
+@include tablet {
+	.mob_menu {
+		display: none;
 	}
 }
