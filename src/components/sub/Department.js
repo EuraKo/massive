@@ -16,7 +16,7 @@ function Department() {
 	return (
 		<>
 			<Layout name='dapartment' bg='thumb6.jpg'>
-				<div className='inner'>
+				<div className='inner inner_desc'>
 					<div className='quote'>
 						<div className='desc'>
 							<FontAwesomeIcon icon={faQuoteLeft} className='quote_icon' />
@@ -65,8 +65,14 @@ function Department() {
 							</div>
 						</div>
 					</div>
-					<div className='depart_list'>
+				</div>
+				<div className='depart_title'>
+					<div className='inner'>
 						<h3>The Teams</h3>
+					</div>
+				</div>
+				<div className='depart_list'>
+					<div className='inner'>
 						<ul>
 							{members.map((item, idx) => {
 								return (
@@ -78,13 +84,13 @@ function Department() {
 											<span></span>
 										</div>
 										<div className='sns_box'>
-											<a href='#' className='btn_icon'>
+											<a className='btn_icon'>
 												<FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
 											</a>
-											<a href='#' className='btn_icon'>
+											<a className='btn_icon'>
 												<FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
 											</a>
-											<a href='#' className='btn_icon'>
+											<a className='btn_icon'>
 												<FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
 											</a>
 										</div>

@@ -1,6 +1,8 @@
 .dapartment {
 	.inner {
 		@include inner;
+	}
+	.inner_desc {
 		padding-top: 0;
 	}
 	.quote {
@@ -69,12 +71,23 @@
 	.info {
 		display: none;
 	}
-	.depart_list {
+	.depart_title {
+		.inner {
+			padding-bottom: 0;
+		}
 		h3 {
-			font-size: 1.8rem;
-			color: $colorPoint-3;
-			margin-top: 2em;
-			margin-bottom: 1.5em;
+			font-size: 4rem;
+			font-family: $fontPoint;
+			font-weight: normal;
+			line-height: 0.65;
+			position: relative;
+			color: #777;
+		}
+	}
+	.depart_list {
+		border-top: 4px solid #777;
+		.inner {
+			padding-top: 2rem;
 		}
 		ul {
 			display: flex;
@@ -197,9 +210,15 @@
 			}
 		}
 	}
+	+ footer {
+		margin-top: 0;
+	}
 }
 @include mobile {
 	.dapartment {
+		.inner_desc {
+			padding-bottom: 6rem;
+		}
 		.owner {
 			display: flex;
 			.pic {
@@ -223,9 +242,6 @@
 }
 @include miniTable {
 	.dapartment {
-		.inner {
-			padding-top: 0;
-		}
 		.quote {
 			align-items: center;
 			margin-bottom: 6rem;
@@ -274,9 +290,9 @@
 				}
 			}
 		}
-		.depart_list {
+		.depart_title {
 			h3 {
-				font-size: 3rem;
+				font-size: 6rem;
 			}
 		}
 	}
@@ -310,10 +326,12 @@
 				font-size: 2rem;
 			}
 		}
-		.depart_list {
+		.depart_title {
 			h3 {
-				font-size: 4rem;
+				font-size: 8rem;
 			}
+		}
+		.depart_list {
 			ul {
 				li {
 					width: 23%;

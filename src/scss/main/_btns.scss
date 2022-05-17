@@ -8,15 +8,16 @@
 	li {
 		width: 4px;
 		height: 2rem;
-		background: #aaa;
-		box-shadow: 1px 1px 0 #fff;
+		background: rgba($colorPoint-1, 0.5);
+		box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 		margin-bottom: 20px;
 		transform: rotate(45deg);
 		transform-origin: center;
 		cursor: pointer;
 		&.on {
 			transform: rotate(45deg) scaleY(2);
-			background: $colorPoint-3;
+			box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+			background: $colorPoint-1;
 
 			cursor: pointer;
 			transition: transform 0.5s;

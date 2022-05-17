@@ -2,7 +2,7 @@ $headerH: 6rem;
 header {
 	height: $headerH;
 	position: relative;
-	z-index: 5;
+	z-index: 15;
 	.inner {
 		@include inner;
 		height: 100%;
@@ -41,7 +41,7 @@ header {
 				height: 3px;
 				background: #000;
 				position: absolute;
-				// transform: rotate(-45deg);
+				transition: 0.3s;
 				&.top {
 					top: 0;
 					margin-left: 20%;
@@ -49,6 +49,7 @@ header {
 				&.center {
 					width: 100%;
 					top: 50%;
+					left: 0;
 					margin-top: -1.5px;
 				}
 				&.bottom {
@@ -57,29 +58,31 @@ header {
 				}
 			}
 		}
+		&.show {
+			.bars {
+				.bar {
+					&.top {
+						width: 50%;
+						right: 0;
+						top: 4px;
+						transform: rotate(45deg);
+					}
+					&.center {
+						left: -20px;
+						opacity: 0;
+					}
+					&.bottom {
+						width: 50%;
+						bottom: 4px;
+						right: 0;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
 	}
 	#gnb {
 		display: none;
-		width: 100%;
-		height: calc(100vh - $headerH);
-		position: fixed;
-		top: $headerH;
-		left: 0;
-		background: #eee;
-		font-family: $fontPoint;
-		padding: 6rem 3rem;
-		li {
-			margin-bottom: 2rem;
-			a {
-				font-size: 2rem;
-			}
-		}
-		.join {
-			font-size: 2rem;
-			position: absolute;
-			bottom: 1rem;
-			right: 1rem;
-		}
 	}
 }
 
