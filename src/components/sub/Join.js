@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const path = process.env.PUBLIC_URL;
@@ -21,6 +21,7 @@ function Join() {
 	const [val, setVal] = useState(initVal);
 	const [err, setErr] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
+	const form = useRef(null);
 
 	const check = (val) => {
 		const errs = {};
@@ -117,6 +118,15 @@ function Join() {
 	const handleReset = () => {
 		setVal(initVal);
 		setErr({});
+		const radios = form.current.querySelectorAll('.radio');
+		const checks = form.current.querySelectorAll('.check');
+
+		for (const radio of radios) {
+			radio.classList.remove('on');
+		}
+		for (const check of checks) {
+			check.classList.remove('on');
+		}
 	};
 
 	const handleSubmit = (e) => {
@@ -135,7 +145,7 @@ function Join() {
 		<>
 			<Layout name='join' bg='thumb11.jpg'>
 				<div className='inner'>
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={handleSubmit} ref={form}>
 						<fieldset>
 							<legend>회원가입하기</legend>
 							<div className='form_wrap'>

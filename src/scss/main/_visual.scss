@@ -8,6 +8,16 @@
 		position: fixed;
 		top: 0;
 		right: 0;
+		&::after {
+			content: '';
+			display: block;
+			width: 80%;
+			height: 100%;
+			border-top: 5px solid #fff;
+			border-right: 5px solid #fff;
+			position: absolute;
+			top: 12rem;
+		}
 		img,
 		video {
 			width: 100%;
@@ -68,13 +78,13 @@
 }
 @include tablet {
 	#visual {
-		background: #ccc;
+		background: #fff;
 		figure {
 			width: 70%;
-			box-shadow: -10rem -50vh 0 #aaa;
+			box-shadow: -10rem -50vh 0 $colorPoint-1;
 		}
 		.inner {
-			color: #fff;
+			color: #777;
 			left: 10rem;
 			transform: translateX(0);
 			h2 {
@@ -82,10 +92,11 @@
 				text-align: left;
 			}
 			.bg_text {
-				font-size: 20rem;
+				font-size: 24rem;
 				bottom: -10rem;
 				left: 0;
-				color: rgba(#fff, 0.4);
+				color: rgba(#777, 0.3);
+				text-shadow: 5px 5px 0 rgba(#fff, 0.3);
 			}
 		}
 	}
