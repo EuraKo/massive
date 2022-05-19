@@ -7,7 +7,7 @@
 		height: 100%;
 		position: fixed;
 		top: 0;
-		left: 0;
+		right: 0;
 		img,
 		video {
 			width: 100%;
@@ -71,22 +71,20 @@
 		background: #ccc;
 		figure {
 			width: 70%;
-			box-shadow: 10rem -50vh 0 #aaa;
+			box-shadow: -10rem -50vh 0 #aaa;
 		}
 		.inner {
 			color: #fff;
-			left: auto;
-			right: 10rem;
+			left: 10rem;
 			transform: translateX(0);
 			h2 {
 				width: 100%;
-				text-align: right;
+				text-align: left;
 			}
 			.bg_text {
 				font-size: 20rem;
 				bottom: -10rem;
-				right: 0;
-				left: auto;
+				left: 0;
 				color: rgba(#fff, 0.4);
 			}
 		}

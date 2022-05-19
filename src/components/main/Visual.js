@@ -15,7 +15,7 @@ function Visual(props) {
 				<h2
 					style={
 						position >= 0
-							? { transform: `translateX(-${position / 1.8}px)` }
+							? { transform: `translateX(${position / 1.8}px)` }
 							: null
 					}>
 					Number of House.
@@ -24,7 +24,7 @@ function Visual(props) {
 					className='bg_text'
 					style={
 						position >= 0
-							? { transform: `translateX(-${position / 1.4}px)` }
+							? { transform: `translateX(${position / 1.4}px)` }
 							: null
 					}>
 					MASSIVE.
