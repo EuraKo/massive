@@ -34,7 +34,7 @@ function Header(props) {
 				<div className='inner'>
 					<h1 className='logo'>
 						<NavLink exact to='/'>
-							<img src={`${path}/img/svg/logo.svg`} alt='메인로고' />
+							<img src={`${path}/img/SVG/logo.svg`} alt='메인로고' />
 						</NavLink>
 					</h1>
 					<button

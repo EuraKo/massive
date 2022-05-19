@@ -7,7 +7,7 @@ function Footer() {
 			<div className='inner'>
 				<h2 className='logo'>
 					<NavLink exact to='/'>
-						<img src={`${path}/img/svg/logo_w.svg`} alt='메인로고' />
+						<img src={`${path}/img/SVG/logo_w.svg`} alt='메인로고' />
 					</NavLink>
 				</h2>
 				<div className='sitemap'>
