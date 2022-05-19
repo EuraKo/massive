@@ -75,7 +75,7 @@ function Main() {
 			<main ref={main}>
 				<Header type={'header_main'} fisrtSec={first} />
 				<Btns num={num} setIndex={setIndex} />
-				<Visual />
+				<Visual scrolled={scrolled} start={pos.current[0]} />
 				<Gallery scrolled={scrolled} start={pos.current[1]} />
 				<Notice />
 				<Vids />

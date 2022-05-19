@@ -1,5 +1,10 @@
 const path = process.env.PUBLIC_URL;
-function Visual() {
+function Visual(props) {
+	const scrolled = props.scrolled;
+	const start = props.start;
+	const base = 0;
+	const position = scrolled - start + base;
+
 	return (
 		<section id='visual' className='scroll_section'>
 			<figure>
@@ -8,14 +13,17 @@ function Visual() {
 			</figure>
 			<div className='inner'>
 				<h2>Number of House.</h2>
-				<div className='bg_text'>MASSIVE.</div>
-			</div>
-			{/* <div className='squre'>
-				<div className='title'> Leave us a message.</div>
-				<div className='contact'>
-					Contact us <a href='#'>z</a>
+				<div
+					className='bg_text'
+					style={
+						position >= 0
+							? { transform: `translateX(-${position / 1.4}px)` }
+							: null
+					}>
+					MASSIVE.
 				</div>
-			</div> */}
+			</div>
+
 			<button className='btn_scroll'>
 				<svg viewBox='0 0 32 54.2'>
 					<title>wheel</title>
