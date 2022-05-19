@@ -1,10 +1,12 @@
 import Menu from './Menu';
 import { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+const path = process.env.PUBLIC_URL;
 
 function Header(props) {
 	const menu = useRef(null);
 	const mo_btn = useRef(null);
+	const header = useRef(null);
 	const [toggle, setToggle] = useState(false);
 	const active = { color: '#1d8ddc' };
 	const clickMo = () => {
@@ -20,13 +22,19 @@ function Header(props) {
 			mo_btn.current.classList.remove('show');
 		}
 	}, [toggle]);
+
+	useEffect(() => {
+		!props.fisrtSec
+			? header.current.classList.add('header_firstSec')
+			: header.current.classList.remove('header_firstSec');
+	}, [props.fisrtSec]);
 	return (
 		<>
-			<header className={props.type}>
+			<header className={`${props.type}`} ref={header}>
 				<div className='inner'>
 					<h1 className='logo'>
 						<NavLink exact to='/'>
-							massive.
+							<img src={`${path}/img/svg/logo.svg`} alt='메인로고' />
 						</NavLink>
 					</h1>
 					<button

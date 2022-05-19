@@ -14,6 +14,7 @@ function Main() {
 	const pos = useRef([]); // 재갱신 방지
 	const [index, setIndex] = useState(0); // 스크롤로 변경되는 수
 	const [num, setNum] = useState(0); // 총 섹션 개수
+	const [first, setFirst] = useState(false); // 첫번째 섹션 판단
 
 	const [scrolled, setScrolled] = useState(0);
 
@@ -42,6 +43,11 @@ function Main() {
 				secs[idx].classList.add('on');
 			}
 		});
+		if (!secs[0].classList.contains('on')) {
+			setFirst(true);
+		} else {
+			setFirst(false);
+		}
 	};
 
 	useEffect(() => {
@@ -67,7 +73,7 @@ function Main() {
 	return (
 		<>
 			<main ref={main}>
-				<Header type={'header_main'} />
+				<Header type={'header_main'} fisrtSec={first} />
 				<Btns num={num} setIndex={setIndex} />
 				<Visual />
 				<Gallery />
