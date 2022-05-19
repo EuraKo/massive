@@ -12,7 +12,14 @@ function Visual(props) {
 				<video src={`${path}/img/whiteHouse.mp4`} muted autoPlay loop></video>
 			</figure>
 			<div className='inner'>
-				<h2>Number of House.</h2>
+				<h2
+					style={
+						position >= 0
+							? { transform: `translateX(-${position / 1.8}px)` }
+							: null
+					}>
+					Number of House.
+				</h2>
 				<div
 					className='bg_text'
 					style={
