@@ -98,6 +98,7 @@
 		width: 100%;
 		height: 70vmin;
 		background: #eee;
+		filter: grayscale(1);
 	}
 	& + footer {
 		margin-top: 0;

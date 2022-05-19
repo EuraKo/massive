@@ -76,7 +76,7 @@ function Main() {
 				<Header type={'header_main'} fisrtSec={first} />
 				<Btns num={num} setIndex={setIndex} />
 				<Visual />
-				<Gallery />
+				<Gallery scrolled={scrolled} start={pos.current[1]} />
 				<Notice />
 				<Vids />
 				<Members />

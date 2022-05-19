@@ -1,9 +1,10 @@
 #gallery {
 	.inner {
 		@include inner;
+		position: relative;
 	}
 	h2 {
-		font: 3rem/1 $fontPoint;
+		font: 300 3.5rem/1 $fontPoint;
 		margin-bottom: 1em;
 		span {
 			display: inline-block;
@@ -11,7 +12,18 @@
 			padding-right: 0.3em;
 		}
 	}
-
+	.big_text {
+		display: none;
+		position: absolute;
+		right: 1rem;
+		bottom: 0;
+		z-index: 1;
+		font-size: 20rem;
+		font-family: $fontPoint;
+		line-height: 1;
+		color: rgba($colorBk, 0.3);
+		pointer-events: none;
+	}
 	.gallery_box {
 		.thumb_box {
 			height: 25vw;
@@ -72,7 +84,7 @@
 						position: absolute;
 						left: 0;
 						bottom: 0;
-						padding: 2em 1em;
+						padding: 3em 1em;
 						color: #fff;
 					}
 					.btn_link {
@@ -105,19 +117,22 @@
 			justify-content: space-between;
 		}
 		h2 {
-			font-size: 3.5rem;
+			font-size: 4rem;
 			padding-right: 4rem;
 			padding-top: 4rem;
 			span {
 				display: table;
-				margin-bottom: 0.5em;
+				margin-bottom: 0.2em;
 				padding-right: 0;
 			}
+		}
+		.big_text {
+			display: block;
 		}
 		.gallery_box {
 			width: 100%;
 			max-width: 80rem;
-			// max-height: 50rem;
+			max-height: 70rem;
 			.thumb_box {
 				height: 25%;
 			}
@@ -126,6 +141,13 @@
 }
 @include tablet {
 	#gallery {
+		h2 {
+			font-weight: 100;
+			font-size: 4.5rem;
+			span {
+				margin-bottom: 0.4em;
+			}
+		}
 		.gallery_box {
 			display: flex;
 			.thumb_box {

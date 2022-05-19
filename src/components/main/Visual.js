@@ -10,6 +10,12 @@ function Visual() {
 				<h2>Number of House.</h2>
 				<div className='bg_text'>MASSIVE.</div>
 			</div>
+			{/* <div className='squre'>
+				<div className='title'> Leave us a message.</div>
+				<div className='contact'>
+					Contact us <a href='#'>z</a>
+				</div>
+			</div> */}
 			<button className='btn_scroll'>
 				<svg viewBox='0 0 32 54.2'>
 					<title>wheel</title>

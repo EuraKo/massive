@@ -80,7 +80,7 @@ function Header(props) {
 							</li>
 						</ul>
 						<NavLink className='join' to='/Join'>
-							Join
+							JOIN
 						</NavLink>
 					</nav>
 				</div>

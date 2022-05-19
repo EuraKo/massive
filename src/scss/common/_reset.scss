@@ -46,7 +46,10 @@ body {
 	overflow-x: hidden;
 	font-family: $fontDefault;
 }
-
+main section {
+	position: relative;
+	background-color: #fff;
+}
 /* 버튼 */
 
 .btn_wrap {

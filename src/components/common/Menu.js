@@ -96,7 +96,7 @@ const Menu = forwardRef((props, ref) => {
 								transition: { delay: 0.6 },
 							}}
 							exit={{ opacity: 0, x: -20 }}>
-							<NavLink to='/Join'>Join</NavLink>
+							<NavLink to='/Join'>JOIN</NavLink>
 						</motion.li>
 					</motion.ul>
 				</motion.nav>

@@ -29,7 +29,11 @@
 			}
 			.desc {
 				font: 1.2rem/1.2 $fontDefault;
+				color: $colorDarkGary;
 				padding: 1em;
+			}
+			.date {
+				color: $colorDarkGary;
 			}
 		}
 		&:hover {

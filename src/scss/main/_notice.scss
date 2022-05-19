@@ -35,12 +35,14 @@
 				padding: 2rem 1rem;
 			}
 			.title {
-				font: bold 1.6rem/1.2 $fontPoint;
+				font: 1.6rem/1.2 $fontPoint;
 				margin-bottom: 0.5em;
+				color: #333;
 			}
 			.comment {
 				font-size: 1.2rem;
 				line-height: 1.2;
+				color: rgba(#333, 0.7);
 			}
 		}
 	}
