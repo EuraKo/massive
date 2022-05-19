@@ -6,6 +6,7 @@
 	h2 {
 		font: 300 3.5rem/1 $fontPoint;
 		margin-bottom: 1em;
+
 		span {
 			display: inline-block;
 			border-bottom: 3px solid #333;
@@ -144,6 +145,9 @@
 		h2 {
 			font-weight: 100;
 			font-size: 4.5rem;
+			opacity: 0;
+			transform: translateY(-10rem);
+			transition: 0.5s;
 			span {
 				margin-bottom: 0.4em;
 			}
@@ -169,6 +173,12 @@
 			.cont_box {
 				width: 80%;
 				height: 100%;
+			}
+		}
+		&.on {
+			h2 {
+				opacity: 1;
+				transform: translateY(0);
 			}
 		}
 	}

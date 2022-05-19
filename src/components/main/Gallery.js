@@ -56,12 +56,7 @@ function Gallery(props) {
 				<div
 					className='big_text'
 					ref={bigTitle}
-					style={
-						position >= 0
-							? // ? { transform: `translateX(-${position / 1.2}px)` }
-							  { right: `${move}px` }
-							: null
-					}>
+					style={position >= 0 ? { right: `${move}px` } : null}>
 					GALLERY
 				</div>
 				<div className='gallery_box'>

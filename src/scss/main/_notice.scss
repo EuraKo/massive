@@ -2,6 +2,7 @@
 	background: #eaf0f8;
 	.inner {
 		@include inner;
+		overflow: hidden;
 	}
 	.title_wrap {
 		position: relative;
@@ -86,6 +87,37 @@
 				}
 				.comment {
 					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}
+@include tablet {
+	#notice {
+		.title_wrap {
+			opacity: 0;
+			transform: scale(0.8);
+			transition: 0.5s;
+		}
+		ul li {
+			opacity: 0;
+			transform: translateY(-10rem);
+			transition: 0.3s;
+			@for $i from 1 through 4 {
+				&:nth-of-type(#{$i}) {
+					transition-delay: $i * 0.1s;
+				}
+			}
+		}
+		&.on {
+			.title_wrap {
+				opacity: 1;
+				transform: scale(1);
+			}
+			ul {
+				li {
+					opacity: 1;
+					transform: translateY(0);
 				}
 			}
 		}

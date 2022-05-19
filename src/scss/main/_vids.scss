@@ -176,17 +176,26 @@
 	#vids {
 		.title_wrap {
 			margin-bottom: 6rem;
+			h2 {
+				opacity: 0;
+				transform: translateX(-100%);
+				transition: 0.3s;
+			}
 			.disc {
 				position: relative;
+				opacity: 0;
+				transition: 0.3s;
 				&::after {
 					content: '';
 					display: block;
 					position: absolute;
 					left: -25rem;
 					top: 50%;
-					width: 20rem;
+					width: 0;
 					height: 1px;
 					background: #000;
+					transition: 0.3s;
+					transition-delay: 0.3s;
 				}
 			}
 		}
@@ -205,6 +214,20 @@
 			transform: translateY(-5rem);
 			.pic {
 				height: 56rem;
+			}
+		}
+		&.on {
+			.title_wrap {
+				h2 {
+					opacity: 1;
+					transform: translateX(0);
+				}
+				.disc {
+					opacity: 1;
+					&::after {
+						width: 20rem;
+					}
+				}
 			}
 		}
 	}

@@ -7,15 +7,16 @@ const path = process.env.PUBLIC_URL;
 function Join() {
 	const history = useHistory();
 	const initVal = {
+		term: null,
 		userid: '',
 		pwd1: '',
 		pwd2: '',
 		email: '',
 		phone: '',
-		comments: '',
 		age: null,
 		hobby: null,
 		job: '',
+		comments: '',
 	};
 
 	const [val, setVal] = useState(initVal);
@@ -28,6 +29,10 @@ function Join() {
 		const eng = /[a-zA-Z]/;
 		const num = /[0-9]/;
 		const spc = /[!@#$%^&*()_+]/;
+
+		if (!val.term) {
+			errs.term = '이용약관에 대한 안내에 동의해주세요';
+		}
 
 		if (val.userid.length < 5) {
 			errs.userid = 'id를 5글자 이상 입력하세요';
@@ -65,7 +70,9 @@ function Join() {
 		if (val.job === '') {
 			errs.job = '직업을 선택해주세요.';
 		}
-
+		if (val.comments.length < 10) {
+			errs.comments = '코멘트를 10글자 이상 입력하세요';
+		}
 		return errs;
 	};
 
@@ -148,6 +155,89 @@ function Join() {
 					<form onSubmit={handleSubmit} ref={form}>
 						<fieldset>
 							<legend>회원가입하기</legend>
+							<div className='term'>
+								<div className='term_cont'>
+									<div className='article'>
+										<h3 className='article__title'>여러분을 환영합니다.</h3>
+										<p className='article__text'>
+											massive. 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서
+											감사합니다. 본 약관은 다양한 massive. 서비스의 이용과
+											관련하여 massive. 서비스를 제공하는 massive. 주식회사(이하
+											‘massive.’)와 이를 이용하는 massive. 서비스 회원(이하
+											‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의
+											massive. 서비스 이용에 도움이 될 수 있는 유익한 정보를
+											포함하고 있습니다.
+										</p>
+										<p className='article__text'>
+											massive. 서비스를 이용하시거나 massive. 서비스 회원으로
+											가입하실 경우 여러분은 본 약관 및 관련 운영 정책을
+											확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게
+											살펴봐 주시기 바랍니다.
+										</p>
+									</div>
+									<div className='article'>
+										<h3 className='article__title'>
+											다양한 massive. 서비스를 즐겨보세요.
+										</h3>
+										<p className='article__text'>
+											massive.는
+											<a
+												href='https://eurako.github.io/massive'
+												target='_blank'>
+												https://eurako.github.io/massive
+											</a>
+											을 비롯한 massive. 도메인의 웹사이트 및
+											응용프로그램(어플리케이션, 앱)을 통해 정보 검색, 다른
+											이용자와의 커뮤니케이션, 콘텐츠 제공, 상품 쇼핑 등
+											여러분의 생활에 편리함을 더할 수 있는 다양한 서비스를
+											제공하고 있습니다.
+											<br />
+											여러분은 PC, 휴대폰 등 인터넷 이용이 가능한 각종 단말기를
+											통해 각양각색의 massive. 서비스를 자유롭게 이용하실 수
+											있으며, 개별 서비스들의 구체적인 내용은 각 서비스 상의
+											안내, 공지사항,
+											<a
+												href='https://eurako.github.io/massive'
+												target='_blank'>
+												massive. 웹고객센터(이하 ‘고객센터’)
+											</a>
+											도움말 등에서 쉽게 확인하실 수 있습니다.
+										</p>
+										<p className='article__text'>
+											massive.는 기본적으로 여러분 모두에게 동일한 내용의
+											서비스를 제공합니다. 다만, '청소년보호법' 등 관련 법령이나
+											기타 개별 서비스 제공에서의 특별한 필요에 의해서 연령 또는
+											일정한 등급을 기준으로 이용자를 구분하여 제공하는 서비스의
+											내용, 이용 시간, 이용 횟수 등을 다르게 하는 등 일부 이용을
+											제한하는 경우가 있습니다. 자세한 내용은 역시 각 서비스
+											상의 안내, 공지사항, 고객센터 도움말 등에서 확인하실 수
+											있습니다.
+										</p>
+										<p className='article__text'>
+											massive. 서비스에는 기본적으로 본 약관이 적용됩니다만
+											massive.가 다양한 서비스를 제공하는 과정에서 부득이 본
+											약관 외 별도의 약관, 운영정책 등을 적용하는 경우(예,
+											massive.페이, V LIVE 등)가 있습니다. 그리고 massive.
+											계열사가 제공하는 특정 서비스의 경우에도(예, LINE, SNOW등)
+											해당 운영 회사가 정한 고유의 약관, 운영정책 등이 적용될 수
+											있습니다. 이러한 내용은 각각의 해당 서비스 초기 화면에서
+											확인해 주시기 바랍니다.
+										</p>
+									</div>
+								</div>
+								<div className='input_group'>
+									<label htmlFor='term' className='check'>
+										<input
+											type='checkbox'
+											name='term'
+											id='term'
+											onChange={handleCheck}
+										/>
+										massive. 이용약관 동의
+									</label>
+									<div className='err'>{err.term}</div>
+								</div>
+							</div>
 							<div className='form_wrap'>
 								<div className='input_group'>
 									{/* user id */}
@@ -337,6 +427,18 @@ function Join() {
 									</select>
 									<div className='err'>{err.job}</div>
 								</div>
+								{/* comment */}
+								<div className='input_group'>
+									<label htmlFor='comments' className='form_title'>
+										COMMENTS
+									</label>
+									<textarea
+										id='comments'
+										name='comments'
+										value={val.comments}
+										onChange={(e) => handleChange(e)}></textarea>
+									<div className='err'>{err.comments}</div>
+								</div>
 							</div>
 							<div className='btn_wrap'>
 								<input
@@ -354,9 +456,9 @@ function Join() {
 							</div>
 						</fieldset>
 					</form>
-					<figure className='bg_city'>
+					{/* <figure className='bg_city'>
 						<img src={`${path}/img/pattern.jpg`} alt='' />
-					</figure>
+					</figure> */}
 				</div>
 			</Layout>
 		</>
