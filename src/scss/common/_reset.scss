@@ -98,15 +98,17 @@ main section {
 }
 
 .btn_normal {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	display: inline-block;
 	padding: 0.3em 1em;
 	background-color: $colorBk;
 	font-family: $fontDefault;
 	letter-spacing: 1px;
 	color: #fff;
+	transition: 0.3s;
 	&:hover {
 		background: $colorPoint-1;
+		border-color: $colorPoint-1;
 	}
 }
 .btn_icon {
@@ -125,10 +127,10 @@ main section {
 		}
 	}
 	&.btn_modify {
-		color: $colorPoint-2;
-		border-color: $colorPoint-2;
+		color: $colorPoint-1;
+		border-color: $colorPoint-1;
 		&:hover {
-			background: $colorPoint-2;
+			background: $colorPoint-1;
 			color: #fff;
 		}
 	}
