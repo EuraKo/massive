@@ -99,6 +99,10 @@
 		height: 70vmin;
 		background: #eee;
 		filter: grayscale(1);
+		transition: 0.3s;
+		&:hover {
+			filter: grayscale(0);
+		}
 	}
 	& + footer {
 		margin-top: 0;
