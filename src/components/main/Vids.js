@@ -53,7 +53,7 @@ function Vids() {
 												<button
 													type='button'
 													onClick={() => {
-														console.log(idx);
+														// console.log(idx);
 														handleClick(idx);
 													}}>
 													<svg viewBox='0 0 65 65'>

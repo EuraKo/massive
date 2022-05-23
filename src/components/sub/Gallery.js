@@ -24,9 +24,11 @@ function Gallery() {
 
 	const endLoading = () => {
 		setTimeout(() => {
-			frame.current.classList.add('on_list');
-			setLoading(false);
-			setEnableClick(true);
+			if (frame.current !== null) {
+				frame.current.classList.add('on_list');
+				setLoading(false);
+				setEnableClick(true);
+			}
 		}, 1000);
 	};
 	const showSearch = (e) => {
@@ -139,7 +141,7 @@ function Gallery() {
 									</div>
 									<div className='pic'>
 										<img
-											src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+											src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_n.jpg`}
 											alt=''
 										/>
 									</div>
