@@ -100,14 +100,24 @@
     const vids = [
       path + 'whiteHouse.mp4'
     ]
+    const imgs = [
+      path + 'thumb3.jpg',
+      path + 'thumb5.jpg',
+      path + 'thumb6.jpg',
+      path + 'thumb7.jpg',
+      path + 'thumb10.jpg',
+      path + 'thumb11.jpg',
+    ];
+
     const lenVid = vids.length;
+    const lenImg = imgs.length;
     const defaults = document.querySelector('.default');
     const mask = document.querySelector('.mask');
     let tags = '';
 
     createDOM();
 
-    Promise.all([loadVid()]).then((result) => {
+    Promise.all([loadVid(), loadImg()]).then((result) => {
       if (result) {
         mask.classList.add('off');
         setTimeout(() => {
@@ -116,12 +126,17 @@
         }, 2000);
       }
     });
+
     function createDOM() {
       vids.forEach(src => {
         tags += `<video src=${src}></video>`;
       })
+      imgs.forEach(src => {
+        tags += `<img src='${src}'/>`;
+      })
       defaults.innerHTML = tags;
     }
+
     function loadVid() {
       return new Promise((res, rej) => {
         const vidDOM = defaults.querySelectorAll('video');
@@ -135,6 +150,21 @@
             }
           }
 
+        })
+      })
+    }
+
+    function loadImg() {
+      return new Promise((res, rej) => {
+        const imgDom = defaults.querySelectorAll('img');
+        let countImg = 0;
+        imgDom.forEach((img) => {
+          img.onload = () => {
+            countImg++;
+            if (countImg === lenImg) {
+              res(true);
+            }
+          }
         })
       })
     }
