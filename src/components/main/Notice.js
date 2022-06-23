@@ -44,7 +44,9 @@ function Notice() {
 			},
 		];
 		const data = localStorage.getItem('post');
+		console.log(data);
 		if (data) {
+			console.log(data);
 			return JSON.parse(data);
 		} else {
 			return dummy;
@@ -54,6 +56,7 @@ function Notice() {
 	const [posts] = useState(getLocalData);
 
 	useEffect(() => {
+		// localStorage.removeItem('post');
 		localStorage.setItem('post', JSON.stringify(posts));
 	}, []);
 
@@ -70,6 +73,7 @@ function Notice() {
 					<ul>
 						{posts.map((post, idx) => {
 							if (idx < 4) {
+								console.log(post);
 								return (
 									<li key={idx} className='post'>
 										<div className='title'>
